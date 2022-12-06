@@ -2,7 +2,7 @@
 def new_in_list(my_list, idx, element):
     length = len(my_list)
     if (idx < 0 or idx >= length):
-        return (my_list[idx])
+        return (my_list)
     new_list = []
     for i in range(length):
         new_list.append(my_list[i])

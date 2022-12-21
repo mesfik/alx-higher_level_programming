@@ -56,10 +56,10 @@ class Square:
         with the character #
         '''
         if self.__size == 0:
-            print()
+            print('\n')
         else:
             for i in range(self.__position[1]):
-                print()
+                print('\n')
             for i in range(self.__size):
-                print("_" * self.__position[0], end='')
+                print(" " * self.__position[0], end='')
                 print("#" * self.__size)

@@ -67,3 +67,16 @@ class Square:
                     print("#", end='')
                 print()
             return
+
+    def __str__(self):
+        """Str method for print from main module."""
+        my_str = ""
+        if self.__size == 0:
+            return ''
+        else:
+            my_str += '\n' * self.__position[1]
+            for i in range(0, self.__size):
+                my_str += ' ' * self.__position[0]
+                my_str += '#' * self.__size
+                my_str += '\n'
+            return my_str[:-1]

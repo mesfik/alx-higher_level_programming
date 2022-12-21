@@ -40,22 +40,20 @@ class Square:
         Return: area aquared'''
         return self.__size * self.__size
 
-    '''compair with the new area'''
-    def __lessT__(self, new):
-        '''to know if it is less than'''
-        return self.area() < new.area()
-    def __greatT__(self, new):
-        '''to know if it is greater than'''
-        return self.area() > new.area()
-    def __greatE__(self, new):
-        '''to know if it is greater than or equal or not'''
-        return self.area() >= new.area()
-    def __lessE__(self, new):
-        '''to check if it is less than or equal or not'''
-        return self.area() <= new.area()
-    def __Equ__(self, new):
-        '''to check if it is equal'''
-        return self.area() == new.area()
-    def __NEqu__(self, new):
-        '''to check if it is not equal'''
-        return self.area() != new.area()
+    def __lessT__(self, other):
+        return (self.area() < other.area())
+
+    def __greatT__(self, other):
+        return (self.area() > other.area())
+
+    def __greatE__(self, other):
+        return (self.area() >= other.area())
+
+    def __lessE__(self, other):
+        return (self.area() <= other.area())
+
+    def __Equ__(self, other):
+        return (self.area() == other.area())
+
+    def __NEqu__(self, other):
+        return (self.area() != other.area())

@@ -40,20 +40,20 @@ class Square:
         Return: area aquared'''
         return self.__size * self.__size
 
-    def __lessT__(self, other):
+    def __lt__(self, other):
         return (self.area() < other.area())
 
-    def __greatT__(self, other):
+    def __gt__(self, other):
         return (self.area() > other.area())
 
-    def __greatE__(self, other):
+    def __ge__(self, other):
         return (self.area() >= other.area())
 
-    def __lessE__(self, other):
+    def __le__(self, other):
         return (self.area() <= other.area())
 
-    def __Equ__(self, other):
+    def __eq__(self, other):
         return (self.area() == other.area())
 
-    def __NEqu__(self, other):
+    def __ne__(self, other):
         return (self.area() != other.area())

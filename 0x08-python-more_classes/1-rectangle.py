@@ -43,7 +43,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def width(self, value):
+    def height(self, value):
         """property setter to set the height
         Args: value: value of height
         Raise: TypeError: if value not an integer

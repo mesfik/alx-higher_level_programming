@@ -100,7 +100,6 @@ class Rectangle:
 
         print("Bye rectangle...")
 
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """A static method that returns bigger rectangle based on area

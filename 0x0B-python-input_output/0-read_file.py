@@ -9,4 +9,5 @@ def read_file(filename=""):
     Args: filename: an empty list of file
     """
     with open(filename, 'r', encoding="utf-8") as file:
-        print(file.read())
+        for files in file:
+            print(files, end="")

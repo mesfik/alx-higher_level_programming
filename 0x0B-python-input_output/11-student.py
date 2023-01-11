@@ -26,7 +26,7 @@ class Student:
             return {attr: getattr(self, attr) for
                     attr in attrs if hasattr(self, attr)}
         else:
-            return self.__dict_
+            return self.__dict__
 
     def reload_from_json(self, json):
         """A public method that replaces all attributes

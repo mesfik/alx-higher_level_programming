@@ -12,6 +12,7 @@ class MyInt(int):
         """
         equl = int(self) != int(other)
         return equl
+
     def __ne__(self, other):
         """A function to compaire if num is not equal
         Args: other: the number to be compaired

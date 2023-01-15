@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-A module to open empty class
+A module to define base geometry
 """
 
 
 class BaseGeometry:
-    """ An empty class baseGeometry"""
+    """ A class baseGeometry"""
 
     def area(self):
         """A public instance method area
@@ -15,12 +15,12 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """A public instance method that vlidates value
-        Args: name: string name
-              value: value int
+        Args: name (str): string name
+              value (int): value int
         Raise: TypeError: <name> must be an integer
                ValueError: <name> must be greater than 0
         """
         if type(value) != int:
-            raise TypeError("<name> must be an integer")
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))

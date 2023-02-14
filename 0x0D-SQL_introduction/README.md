@@ -1,6 +1,6 @@
 # 0x0D. SQL - Introduction
 
-![mySQL](mysql.png)
+## !(mysql.png)
 
 ## General
 

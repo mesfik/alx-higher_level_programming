@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-'''base modules'''
+'''
+base modules
+'''
+
 
 class Base:
 
@@ -19,5 +22,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-

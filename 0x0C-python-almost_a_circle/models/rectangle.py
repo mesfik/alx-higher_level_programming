@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
-from models.base import Base
-
 """
 Rectangle module inherited from Base
 """
+from models.base import Base
 
 
 class Rectangle(Base):

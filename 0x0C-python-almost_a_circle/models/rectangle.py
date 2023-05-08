@@ -32,11 +32,11 @@ class Rectangle(Base):
             return self.__width
 
         @width.setter
-        def width(self, value):
+        def width(self, width):
             """private instance function to be setted
             Args: value: value to be  setted
             """
-            self.__width = value
+            self.__width = width
 
         @property
         def height(self):
@@ -46,11 +46,11 @@ class Rectangle(Base):
             return self.__height
 
         @height.setter
-        def height(self, value):
+        def height(self, height):
             """private instance function to be setted
             Args: value: value to be  setted
             """
-            self.__height = value
+            self.__height = height
 
         @property
         def x(self):

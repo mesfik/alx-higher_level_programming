@@ -18,11 +18,11 @@ class Rectangle(Base):
           """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ instantiating function"""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
         @property
         def width(self):
@@ -60,12 +60,12 @@ class Rectangle(Base):
             return self.__x
 
         @x.setter
-        def x(self, value):
+        def x(self, x):
             """
             private instance function to be setted
             Args: value: value to be setted in x
             """
-            self.__x = value
+            self.__x = x
 
         @property
         def y(self):
@@ -76,9 +76,9 @@ class Rectangle(Base):
             return self.__y
 
         @y.setter
-        def y(self, value):
+        def y(self, y):
             """
             private instance function to be setted
             Args: value: value to be setted in y
             """
-            self.__y = value
+            self.__y = y

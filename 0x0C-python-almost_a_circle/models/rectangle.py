@@ -3,7 +3,7 @@
 from models.base import Base
 
 """
-Rectangle module
+Rectangle module inherited from Base
 """
 
 

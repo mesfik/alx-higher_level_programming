@@ -18,67 +18,67 @@ class Rectangle(Base):
           """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ instantiating function"""
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super().__init__(id)
 
-        @property
-        def width(self):
-            """private instance function
-            Return: private of width
-            """
-            return self.__width
+    @property
+    def width(self):
+        """private instance function
+        Return: private of width
+        """
+        return self.__width
 
-        @width.setter
-        def width(self, width):
-            """private instance function to be setted
-            Args: value: value to be  setted
-            """
-            self.__width = width
+    @width.setter
+    def width(self, width):
+        """private instance function to be setted
+        Args: value: value to be  setted
+        """
+        self.__width = width
 
-        @property
-        def height(self):
-            """private instance function
-            Return: private of height
-            """
-            return self.__height
+    @property
+    def height(self):
+        """private instance function
+        Return: private of height
+        """
+        return self.__height
 
-        @height.setter
-        def height(self, height):
-            """private instance function to be setted
-            Args: value: value to be  setted
-            """
-            self.__height = height
+    @height.setter
+    def height(self, height):
+        """private instance function to be setted
+        Args: value: value to be  setted
+        """
+        self.__height = height
 
-        @property
-        def x(self):
-            """private instance function
-            Return: private of x
-            """
-            return self.__x
+    @property
+    def x(self):
+        """private instance function
+        Return: private of x
+        """
+        return self.__x
 
-        @x.setter
-        def x(self, x):
-            """
-            private instance function to be setted
-            Args: value: value to be setted in x
-            """
-            self.__x = x
+    @x.setter
+    def x(self, x):
+        """
+        private instance function to be setted
+        Args: value: value to be setted in x
+        """
+        self.__x = x
 
-        @property
-        def y(self):
-            """
-            private instance function
-            Return: private of y
-            """
-            return self.__y
+    @property
+    def y(self):
+        """
+        private instance function
+        Return: private of y
+        """
+        return self.__y
 
-        @y.setter
-        def y(self, y):
-            """
-            private instance function to be setted
-            Args: value: value to be setted in y
-            """
-            self.__y = y
+    @y.setter
+    def y(self, y):
+        """
+        private instance function to be setted
+        Args: value: value to be setted in y
+        """
+        self.__y = y

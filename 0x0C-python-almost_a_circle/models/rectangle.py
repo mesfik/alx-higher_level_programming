@@ -112,8 +112,10 @@ class Rectangle(Base):
 
     def display(self):
         """a function to display the # as a rectangle"""
+        for space in range(self.y):
+            print()
         for space in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __repr__(self):
         """a function to return rectangle in id and x/y forms"""

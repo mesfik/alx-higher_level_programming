@@ -117,4 +117,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """a function to return rectangle in id and x/y forms"""
-        return "[rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        h = self.height
+        w = self.width
+        x = self.x
+        y = self.y
+        r = "[rectangle] ({}) {}/{} - {}/{}".format(self.id, x, y, w, h)
+        return r

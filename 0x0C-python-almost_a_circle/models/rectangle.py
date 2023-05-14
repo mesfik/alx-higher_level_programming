@@ -114,3 +114,7 @@ class Rectangle(Base):
         """a function to display the # as a rectangle"""
         for space in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """a function to return rectangle in id and x/y forms"""
+        return "[rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)

@@ -37,18 +37,9 @@ class Square(Rectangle):
               kwargs: assigns a key/value argument to attributes"""
 
         if args:
-            i = 0
-            for value in range(args):
-                if i == 0:
-                    self.id = value
-                if i == 1:
-                    self.size = value
-                if i == 2:
-                    self.x = value
-                if i == 3:
-                    self.y = value
-            i += 1
-
+            attr = ['id', 'size', 'x', 'y']
+            for i, value in enumerate(args):
+                setattr(self, attr[i], value)
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)

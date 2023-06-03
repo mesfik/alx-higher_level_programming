@@ -1,5 +1,5 @@
 -- script that lists all records with a score >= 10
--- scores ordered by score (top first)
+-- Records are ordered by descending score.
 SELECT `name`, `score`
 FROM `second_table`
 WHERE `score` >= 10

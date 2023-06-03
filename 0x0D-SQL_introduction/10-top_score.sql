@@ -1,5 +1,5 @@
--- script that lists all records of the table
--- from second_table of the database hbtn_0c_0
-SELECT `name`,`score`
-FROM `hbtn_0c_0`.`second_table`
+-- Lists all records of the table second_table.
+-- Records are ordered by descending score.
+SELECT `score`, `name`
+FROM `second_table`
 ORDER BY `score` DESC;

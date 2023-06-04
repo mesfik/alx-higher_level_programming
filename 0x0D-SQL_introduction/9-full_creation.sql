@@ -1,5 +1,5 @@
 --second_table in the database hbtn_0c_0
---If the table second_table already exists, your script should not fail
+--If the the table second_table already exists, your script should not fail
 
 CREATE TABLE IF NOT EXISTS second_table(
 	id INT,

@@ -1,4 +1,4 @@
-### ![Javascript](js.png)
+## ![Javascript](js.png)
 # General
 - Why JavaScript programming is amazing
 - How to create an object in JavaScript

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy import String, Integer, Column
+import sys
 """
 python file that contains the class definition
 of a State and an instance

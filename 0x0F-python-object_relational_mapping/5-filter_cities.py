@@ -1,26 +1,32 @@
 #!/usr/bin/python3
 """
-Lists all cities with a name starting with 
+The 5-filter_cities.py module
+It is a script that takes in the name of a state as an argument and
+lists all cities of that state, using the database
+script should take 4 arguments: mysql username, mysql password
+and database name
 """
-import sys
+
 import MySQLdb
+import sys
 
-if __name__ == '__main__':
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
-                         db=sys.argv[3], port=3306)
 
+def _Cities():
+    """List all cities in the database"""
+    db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
-    city_name = sys.argv[4]
-    query = """
-            SELECT * 
-            FROM cities
-            INNER JOIN states ON cities.state_id = states.id
-            WHERE cities.name LIKE %s
-            ORDER BY cities.id ASC;
-            """
-    cur.execute(query, (city_name + "%",))
-    cities = cur.fetchall()
+    cur.execute("SELECT cities.name FROM cities INNER JOIN states ON\
+    cities.state_id = states.id WHERE states.name = %s\
+    ORDER BY cities.id", (sys.argv[4], ))
+    rows = cur.fetchall()
     city_list = []
-    for city in cities:
-        city_list.append(city[0])
-        print(', '.join(city_list))
+    for row in rows:
+        city_list.append(row[0])
+    print(', '.join(city_list))
+    cur.close()
+    db.close()
+
+
+if __name__ == "__main__":
+    _Cities()

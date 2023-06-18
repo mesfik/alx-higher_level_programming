@@ -13,5 +13,5 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM cities;")
     city = cur.fetchall()
 
-    for city in cities:
+    for cities in city:
         print(cities)

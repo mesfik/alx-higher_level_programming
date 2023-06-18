@@ -20,6 +20,7 @@ if __name__ == '__main__':
             """
     cur.execute(query, (city_name + "%",))
     cities = cur.fetchall()
-
+    city_list = []
     for city in cities:
-        print(city)
+        city_list.append(city[0])
+        print(', '.join(city_list))

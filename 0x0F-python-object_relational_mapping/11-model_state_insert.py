@@ -23,6 +23,9 @@ def add_new():
     session.add(new_state)
     session.commit()
 
+    new_state = session.query(State).filter(State.name == "Louisiana").first()
+    print(new_state.id)
+
 
 if __name__ == "__main__":
     add_new()

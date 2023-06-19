@@ -21,7 +21,7 @@ def list_having_name_from_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    st = session.query(State).filter(State.name == nama).first()
+    st = session.query(State).filter(State.name == (nama, )).first()
     if st is not None:
         print(st[0])
     else:

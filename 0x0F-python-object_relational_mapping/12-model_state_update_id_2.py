@@ -19,7 +19,7 @@ def update_new():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    update = session.query(State).filter(State.id==2).first()
+    update = session.query(State).filter(State.id == 2).first()
 
     if update:
         update.name = "New Mexico"

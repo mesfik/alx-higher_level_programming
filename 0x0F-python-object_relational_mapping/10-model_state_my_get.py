@@ -21,12 +21,12 @@ def list_having_name_from_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id).all():
-        if name in state.name:
-            print("{}".format(state.id))
-
-        else:
-            print("Not found")
+    state = session.query(State).filter(State.name == name)\
+        .order_by(State.id).first():
+            if state is not None:
+                print(state.id)
+            else:
+                print("Not found")
 
 
 if __name__ == "__main__":

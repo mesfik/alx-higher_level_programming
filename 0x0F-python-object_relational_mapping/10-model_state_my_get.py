@@ -24,7 +24,7 @@ def list_having_name_from_states():
     state = session.query(State).filter(State.name == name)\
         .order_by(State.id).first():
             if state is not None:
-                print(state.id)
+                print(state[0])
             else:
                 print("Not found")
 

@@ -9,15 +9,12 @@ State and an instance Base = declarative_base():
 
 """
 
-
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import String, Integer, Column, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base
+from model_state import Base, State
 import sys
-
-
-Base = declarative_base()
 
 
 class City(Base):
@@ -36,13 +33,6 @@ class City(Base):
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
     state = relationship("State", back_populates="cities")
-
-    def __init__(self, name, state_id):
-        """
-        instantiation function
-        """
-        self.name = name
-        self.state_id = state_id
 
 
 State.cities = relationship("City", order_by=City.id, back_populates="state")

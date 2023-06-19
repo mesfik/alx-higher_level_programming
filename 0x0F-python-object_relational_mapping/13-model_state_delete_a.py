@@ -24,7 +24,7 @@ def delete_a():
     for state in delete_a:
         session.delete(state)
 
-        session.commit()
+    session.commit()
 
 
 if __name__ == "__main__":

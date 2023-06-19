@@ -19,11 +19,9 @@ def list_having_a_from_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.like('a%'))\
-        .order_by(State.id)
-
-    for state in states:
-        print("{}: {}".format(states.id, states.name))
+    for state in session.query(State).order_by(State.id).all():
+        if "a" in state.name:
+            print("{}: {}".format(state.id, state.name))
 
 
 if __name__ == "__main__":

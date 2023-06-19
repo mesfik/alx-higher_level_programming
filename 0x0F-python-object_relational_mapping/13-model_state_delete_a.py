@@ -21,8 +21,8 @@ def delete_a():
 
     delete_a = session.query(State).filter(State.name.like("%a%")).all()
 
-    if delete_a:
-        session.delete(delete_a)
+    for state in delete_a:
+        session.delete(state)
 
         session.commit()
 

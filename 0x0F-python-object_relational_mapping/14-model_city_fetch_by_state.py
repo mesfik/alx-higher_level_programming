@@ -20,9 +20,9 @@ def list_cities():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state, city in session.query(State, City).\
-        join(State, City.state_id == State.id).order_by(State.id):
-            print("{}: ({}) {}".format(state.name, city.id, city.name))
+    for state, city in session.query(State, City)\
+            .join(State, City.state_id == State.id).order_by(State.id):
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
 
 if __name__ == "__main__":

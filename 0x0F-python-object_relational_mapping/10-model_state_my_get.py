@@ -25,6 +25,9 @@ def list_having_name_from_states():
         if name in state.name:
             print("{}".format(state.id))
 
+        else:
+            print("Not found")
+
 
 if __name__ == "__main__":
     list_having_name_from_states()

@@ -21,11 +21,10 @@ def first_state():
 
     first_state = session.query(State).order_by(State.id).first()
 
-    if (first_state == None):
+    if (first_state is None):
         print("Nothing")
     else:
         print("{}: {}".format(first_state.id, first_state.name))
-
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ def list_having_a_from_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.like('%a%'))\
+    states = session.query(State).filter(State.name.like('a%'))\
         .order_by(State.id)
 
     for state in states:

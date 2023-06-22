@@ -22,11 +22,9 @@ def add_new():
 
     Base.metadata.create_all(engine)
 
-    california = State(name='California')
-    san_francisco = City(name='San Francisco', state=california)
+    new_st = City(name='San Francisco', state = State(name="California"))
 
-    session.add(california)
-    session.add(san_francisco)
+    session.add(new_st)
 
     session.commit()
 

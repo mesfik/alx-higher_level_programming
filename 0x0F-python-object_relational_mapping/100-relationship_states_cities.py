@@ -1,34 +1,34 @@
 #!/usr/bin/python3
 """
-module to add a new name states databases
+=====================================
+100-relationship_states_cites module
+=====================================
+creates the State “California” with the City “San Francisco”
+from the database hbtn_0e_100_usa
 """
 
-from model_state import Base, State
+from sqlalchemy import create_engine
+from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 import sys
 
 
-def add_new():
-    """
-    function to add new name states
-    """
-    user = "mysql+mysqldb://{}:{}@localhost:3306/{}"\
+def create_state():
+    """Create state"""
+    url = "mysql+mysqldb://{}:{}@localhost:3306/{}"\
         .format(sys.argv[1], sys.argv[2], sys.argv[3])
-    engine = create_engine(user, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    engine = create_engine(url, echo=False)
 
     Base.metadata.create_all(engine)
 
-    new_st = City(name='San Francisco', state = State(name="California"))
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    session.add(new_st)
-
+    new_city = City(name="San Francisco", state=State(name="California"))
+    session.add(new_city)
     session.commit()
 
 
-
 if __name__ == "__main__":
-    add_new()
+    create_state()

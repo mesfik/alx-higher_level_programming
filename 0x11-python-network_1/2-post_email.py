@@ -28,4 +28,3 @@ if __name__ == "__main__":
 
     html = html.encode("utf-8")
     print(html)
-    print("Your email is: {}".format(email))

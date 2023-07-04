@@ -9,6 +9,7 @@ and displays the body of the response (decoded in utf-8)
 
 from urllib.request import urlopen
 from urllib.parse import urlencode
+import urllib.request
 import sys
 
 if __name__ == "__main__":
@@ -17,9 +18,14 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = {"email": email}
 
-    data = urlencode(data).encode("utf-8")
+    data = urlencode(data)
+    data = data.encode('ascii')
 
-    with urlopen(url, data) as response:
-        html = response.read().decode("utf-8")
+    req = urllib.request.Request(url, data)
 
+    with urlopen(req) as response:
+        html = response.read()
+
+    html = html.encode("utf-8")
+    print(html)
     print("Your email is: {}".format(email))

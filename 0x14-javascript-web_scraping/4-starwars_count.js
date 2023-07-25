@@ -8,7 +8,7 @@ request(url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else if (response.statusCode !== 200) {
-    console.log('error:', response.statusCode);
+    console.log(error);
   } else {
     try {
       const movies = JSON.parse(body).results;

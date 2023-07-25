@@ -10,9 +10,9 @@ request(url, (error, response, body) => {
     console.log(error);
   } else {
     try {
-      const file = JSON.parse(body);
+      const tasks = JSON.parse(body);
       const taskCompleted = {};
-      for (const task of file) {
+      for (const task of tasks) {
         if (task.completed) {
           if (!taskCompleted[task.userId]) {
             taskCompleted[task.userId] = 0;

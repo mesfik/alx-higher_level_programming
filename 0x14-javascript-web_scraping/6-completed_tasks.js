@@ -3,15 +3,17 @@
 const request = require('request');
 const process = require('process');
 
-const url = `https://jsonplaceholder.typicode.com/todos`;
+const url = process.argv[2];
 
 request(url, (error, response, body) => {
   if (error) {
     console.log(error);
+  } else if (response.statusCode !== 200) {
+    console.log('error:', response.statusCode);
   } else {
     try {
-      const tasks = JSON.parse(body);
       const taskCompleted = {};
+      const tasks = JSON.parse(body);
       for (const task of tasks) {
         if (task.completed) {
           if (!taskCompleted[task.userId]) {

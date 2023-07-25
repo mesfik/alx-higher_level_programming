@@ -17,7 +17,5 @@ request(baseURL, (error, response, body) => {
       aggregate[element.userId]++;
     }
   });
-  const formattedOutput = JSON.stringify(aggregate, null, 2)
-    .replace(/"(.*?)":/g, "'$1':");
-  console.log(formattedOutput);
+  console.log(aggregate);
 });
